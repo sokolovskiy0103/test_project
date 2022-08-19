@@ -10,6 +10,6 @@ class SqsNotificationHandler
 {
     public function __invoke(SqsNotification $message)
     {
-        
+        file_put_contents("test_output.txt",$message->getContent() . "\n",FILE_APPEND);
     }
 }

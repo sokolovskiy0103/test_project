@@ -20,7 +20,7 @@ class DefaultController extends AbstractController
     public function index(MessageBusInterface $bus)
     {
         
-        $notification = new SqsNotification('NEW TEST SQS MESSAGE!');
+        $notification = new SqsNotification('it works!');
         dump($notification);
         $bus->dispatch($notification);
              

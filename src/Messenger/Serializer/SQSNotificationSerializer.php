@@ -17,14 +17,17 @@ class SQSNotificationSerializer implements SerializerInterface
      */
     public function decode(array $encodedEnvelope): Envelope
     {
-        throw new \LogicException('Transport & serializer not meant for receiving messages.');
+
+        return new Envelope(new SqsNotification($encodedEnvelope['body']));
+
     }
 
     public function encode(Envelope $envelope): array
     {
               
-        $message = [$envelope->getMessage()];
-        return ["123"];
+        $message = $envelope->getMessage()->getContent();
+        $message = $message . "teeeest";
+        return ['body' => $message];
     }
 
    
