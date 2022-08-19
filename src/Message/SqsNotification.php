@@ -4,7 +4,7 @@ namespace App\Message;
 
 class SqsNotification
 {
-    private $content;
+    private string $content;
 
     public function __construct(string $content)
     {

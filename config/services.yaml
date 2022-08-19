@@ -20,5 +20,14 @@ services:
             - '../src/Entity/'
             - '../src/Kernel.php'
 
+    App\Admin\TaskAdmin:
+        arguments: [ ~, App\Entity\Task, ~ ]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: Task }
+    App\Admin\SQSMessageAdmin:
+        arguments: [ ~, App\Entity\SQSMessage, ~ ]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: SQSMessages }
+
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones

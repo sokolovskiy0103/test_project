@@ -24,9 +24,8 @@ class SQSNotificationSerializer implements SerializerInterface
 
     public function encode(Envelope $envelope): array
     {
-              
+
         $message = $envelope->getMessage()->getContent();
-        $message = $message . "teeeest";
         return ['body' => $message];
     }
 
