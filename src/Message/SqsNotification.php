@@ -15,4 +15,5 @@ class SqsNotification
     {
         return $this->content;
     }
+
 }
